@@ -29,6 +29,10 @@ app.add_middleware(
 
 app.include_router(router)
 
+@app.get("/", tags=["root"])
+def root():
+    return {"message": "Bienvenido a la API IUTEDE - Gestion de TICS", "docs": "/docs", "version": "1.0"}
+
 @app.get("/health", tags=["health"])
 def health_check():
     return {"status": "ok", "api": "iutede backend", "version": "1.0.0"}
