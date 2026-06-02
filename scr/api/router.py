@@ -80,7 +80,8 @@ def crear_usuario(usuario: UsuarioCreate, db: Session = Depends(get_db)):
 def eliminar_usuario(id_usuario: int, db: Session = Depends(get_db)):
     if not UsuarioService(db).obtener(id_usuario):
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
-    
+    UsuarioService(db).eliminar(id_usuario)
+
 
 @router.put("/usuarios/{id_usuario}", response_model=UsuarioResponse, tags=["Usuarios"])
 def actualizar_usuario(id_usuario: int, data : UsuarioUpdate, db: Session = Depends(get_db)):

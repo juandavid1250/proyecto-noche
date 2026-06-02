@@ -56,7 +56,7 @@ class Estudiante(Base):
     #al ser PK y FK a la vez, en este caso se vincula al estudiante con el usuario correspondiente
     id_usuario = Column(ForeignKey("USUARIOS.id_usuario"), primary_key=True)
     matricula = Column(String(50), unique=True)
-    programa_academico = Column(String(100))
+    programa_academico = Column("programa", String(100))
 
     usuario = relationship("Usuarios", back_populates="estudiante")
 
@@ -133,9 +133,10 @@ class Reserva(Base):
     __tablename__ = "RESERVAS"
 
     id_reserva = Column(Integer, primary_key=True, autoincrement=True)
-    id_usuario = Column(ForeignKey("USUARIOS.id_usuario"))
+    id_usuario_solicita = Column(ForeignKey("USUARIOS.id_usuario"))
     id_recurso = Column(ForeignKey("RECURSOS.id_recurso"))
-    fecha_reserva = Column(DateTime)
+    fecha_inicio = Column(DateTime)
+    fecha_fin = Column(DateTime)
 
     usuario = relationship("Usuarios", back_populates="reservas")
     recurso = relationship("Recurso", back_populates="reservas")
@@ -149,6 +150,6 @@ class Novedad(Base):
     id_novedad = Column(Integer, primary_key=True, autoincrement=True)
     id_recurso = Column(ForeignKey("RECURSOS.id_recurso"))
     descripcion = Column(String(255))
-    fecha_novedad = Column(DateTime)
+    fecha_reporte = Column(DateTime)
 
     recurso = relationship("Recurso", back_populates="novedades")
