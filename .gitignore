@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# dotenv
+.env
+.env.*
+
+# Database files
+*.db
+db_export/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend-roles/node_modules/
+
+# Logs
+*.log
+
+# Editor
+.vscode/

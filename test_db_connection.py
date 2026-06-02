@@ -2,8 +2,7 @@ import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scr"))
 
-from scr.infraestructure.database import engine, SessionLocal, DATABASE_URL
-
+from scr.infraestructure.database import engine, DATABASE_URL
 from sqlalchemy import text
 
 
