@@ -28,4 +28,4 @@ To run the app:
    `npm run dev`
 3. Open the app at `http://localhost:5173`
 
-If you want to override the backend URL, set `VITE_API_BASE_URL` to `http://localhost:8000`.
+If you want to override the backend URL, set `VITE_API_BASE_URL` to `https://proyecto-noche.onrender.com`.
